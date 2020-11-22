@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1605528493 source:c:\users\papryk\documents\trainings-tutorials\aoc2018\day1\aoc2018_day_2\main.cpp
+	<algorithm>
+	<fstream>
+	<iostream>
+	<unordered_set>
+	<utility>
+	<vector>
+	"Timer.h"
+
+1603631738 c:\users\papryk\documents\trainings-tutorials\aoc2018\day1\aoc2018_day_2\timer.h
+	<chrono>
+
