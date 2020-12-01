@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1606839184 source:d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\day5\main.cpp
+	<fstream>
+	<iostream>
+	<string>
+	<sstream>
+	<algorithm>
+	<regex>
+
