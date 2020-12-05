@@ -21,3 +21,22 @@
 1606739060 d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\timer.h
 	<chrono>
 
+1606913950 source:c:\users\papryk\documents\trainings-tutorials\aoc2018\day1\day4\main.cpp
+	<iostream>
+	<unordered_map>
+	<unordered_set>
+	<charconv>
+	<tuple>
+	<map>
+	"../common.h"
+
+1606898234 c:\users\papryk\documents\trainings-tutorials\aoc2018\day1\common.h
+	<algorithm>
+	<fstream>
+	<string>
+	<vector>
+	"Timer.h"
+
+1606898234 c:\users\papryk\documents\trainings-tutorials\aoc2018\day1\timer.h
+	<chrono>
+

@@ -3,45 +3,50 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
-#include <regex>
+#include <stack>
 
 using namespace std;
 
-unsigned findMatch(unsigned lb, unsigned ub, const string& pattern, const string& data, unsigned& counter) {
-    cout << "Dafaq " << lb << " " << ub << " " << pattern << " " << counter << endl;
-    if ((data[lb] == pattern[0] and data[ub] == pattern[1]) or (data[lb] == pattern[1] and data[ub] == pattern[0])) {
-        counter+=2;
-        findMatch(lb-1, ub+1, pattern, data, counter);
+
+unsigned findMatch(unsigned lb, unsigned ub, const string& patterns, const string& data, stack<unsigned>& unitIndices) {
+    static unsigned levelOfSearch = 0;
+    char searchPair[] = {data[lb], data[ub], '\0'};
+    string searchString(searchPair);
+    //cout << "[" << lb << ":" << ub << "] " << searchString << "\n";
+    if ((patterns.find(searchString) != string::npos)) {
+        if (levelOfSearch == 0 or ub == data.size()-1) return ub +1;
+        lb = unitIndices.top();
+        unitIndices.pop();
+        levelOfSearch--;
+        return findMatch(lb, ub+1, patterns, data, unitIndices);
+
     }
+    levelOfSearch++;
+    unitIndices.push(lb);
     return ub;
 }
 
 int main()
 {
     string inputData("");
-    string regexData;
+    string patterns;
     stringstream ss;
 
     unsigned asciiLetterOffset = 32;
-    for (char i = 'A'; i <= 'Z'; ++i)
-        ss << i << char(i+asciiLetterOffset);
-    regexData = ss.str();
+    for (char i = 'A'; i <= 'Z'; ++i){
+        ss << i << char(i+asciiLetterOffset) << " " << char(i+asciiLetterOffset) << i<<" ";
+    }
+    patterns = ss.str();
     ifstream file("input.txt");
     file >> inputData;
     file.close();
-    unsigned counter {};
-    for (int i = 0; i < regexData.size(); i+=2){
-        string lookUp = regexData.substr(i, i+2);
-        unsigned indexStart = 0;
-        while(indexStart < inputData.size()) {
-            auto iBegin = inputData.find(lookUp, indexStart);
-            if (iBegin != string::npos){
-                counter+=2;
-                indexStart = findMatch(iBegin-1, iBegin+2, lookUp, inputData, counter);
-                cout << indexStart << endl;
-            }
-        }
+    stack<unsigned> polymerUnitsIndices;
+    polymerUnitsIndices.push(0);
+    unsigned indexStart = 0;
+    while(indexStart < inputData.size()-1) {
+        unsigned iBegin = indexStart;
+        indexStart = findMatch(iBegin, iBegin+1, patterns, inputData, polymerUnitsIndices);
     }
-    cout << counter << endl;
+    cout << polymerUnitsIndices.size() << endl;
     return 0;
 }

@@ -72,7 +72,6 @@ int main(){
     vector<string> inputData;
     inputData.reserve(countLines(filename));
     loadData(filename, inputData, true);
-    printData(inputData);
     GuardShiftMap schedule = createGuardShiftShedule(inputData);
     { //SOLUTION PART1
         Timer t;

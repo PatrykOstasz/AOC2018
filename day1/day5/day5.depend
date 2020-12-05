@@ -7,3 +7,11 @@
 	<algorithm>
 	<regex>
 
+1607012203 source:c:\users\papryk\documents\trainings-tutorials\aoc2018\day1\day5\main.cpp
+	<fstream>
+	<iostream>
+	<string>
+	<sstream>
+	<algorithm>
+	<stack>
+
