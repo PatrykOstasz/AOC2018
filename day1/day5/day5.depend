@@ -1,11 +1,15 @@
 # depslib dependency file v1.0
-1606839184 source:d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\day5\main.cpp
+1607273645 source:d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\day5\main.cpp
+	<algorithm>
 	<fstream>
 	<iostream>
-	<string>
 	<sstream>
-	<algorithm>
-	<regex>
+	<stack>
+	<string>
+	<string_view>
+	<vector>
+	<unordered_set>
+	"../Timer.h"
 
 1607012203 source:c:\users\papryk\documents\trainings-tutorials\aoc2018\day1\day5\main.cpp
 	<fstream>
@@ -14,4 +18,7 @@
 	<sstream>
 	<algorithm>
 	<stack>
+
+1606739060 d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\timer.h
+	<chrono>
 
