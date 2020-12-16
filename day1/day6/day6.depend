@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1608113966 source:d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\day6\main.cpp
+	<fstream>
+	<iostream>
+	<set>
+	<string>
+	<map>
+	<algorithm>
+	<cstdlib>
+	<charconv>
+	<sstream>
+	"../common.h"
+
+1606827301 d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\common.h
+	<algorithm>
+	<fstream>
+	<string>
+	<vector>
+	"Timer.h"
+
+1606739060 d:\patryk\moje dokumenty\trainings-tutorials\aoc\aoc2018\day1\timer.h
+	<chrono>
+
